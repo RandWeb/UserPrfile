@@ -1,4 +1,4 @@
-# UserPrfile
+# UserProfile
 
 
 Exercise for working with api in JavaScript
