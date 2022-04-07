@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
-    
+
     <div class="container">
         <div class="search__wrapper">
-            <form action="#" method="get">
-                <input type="text" name="userName" id="userName" placeholder="@userName">
-                <button type="submit">get information</button>
+            <form class="search">
+                <input type="checkbox" id="toggleSearch" class="search__toggle" hidden />
+                <div class="search__field">
+                    <label for="toggleSearch" class="search__label">
+                        <span class="search__close"></span>
+                    </label>
+                    <input type="text" class="search__input" placeholder="Searching User In Github" />
+                    <label for="toggleSearch" class="search__label">
+                        <div class="search__button">
+                            <div class="search__icon search__button--toggle"></div>
+                        </div>
+                        <button type="submit" class="search__button search__button--submit">
+                            <div class="search__icon"></div>
+                        </button>
+                    </label>
+                </div>
             </form>
         </div>
 
         <div class="card_wrapper">
             <div class="card">
                 <div class="card__left">
-                    <img src="assets/user-profile-svgrepo-com.svg" alt="user profile">
                 </div>
                 <div class="card__center">
-                    <h1>mehrdad tabesh</h1>
-                    <h2><a href="#">@randweb</a></h2>
+                    <h1>git hub</h1>
+                    <h2><a href="https:github.com">@github</a></h2>
                     <div class="extra__info">
-                        <div class="repositories">repositories</div>
-                        <div class="follower">followers</div>
-                        <div class="following">following</div>
+                        <div class="repositories"><span>2222</span>repositories</div>
+                        <div class="follower"><span>2222</span>followers</div>
+                        <div class="following"><span>2222</span>following</div>
                     </div>
                 </div>
                 <div class="card__right">
-                    <span class="card__more">more</span>
-                    <span class="card__edit">edit</span>
+                    <span class="card__more"></span>
+                    <span class="card__edit"></span>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // close onclick outside
+        document.addEventListener('click', (e) => {
+            const toggle = document.querySelector('.search__toggle')
+            const input = document.querySelector('.search__input')
+            const clickedElement = e.target
+
+            if (clickedElement == toggle) {
+                input.value = ''
+                return;
+            }
+
+            const isSearchField = clickedElement.closest('.search__field')
+            console.log(input.value);
+            if (!isSearchField) {
+                toggle.checked = false
+                input.value = ''
+            }
+        })
+    </script>
 </body>
+
 </html>

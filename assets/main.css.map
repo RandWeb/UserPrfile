@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK;EACD,SAAS,EAAE,KAAK;;AAGpB;;SAEU;EACN,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,UAAU;;AAG1B,CAAE;EACE,eAAe,EAAE,IAAI;;AAGzB,EAAG;EACC,UAAU,EAAE,IAAI",
+"sources": ["scss/_layoyt.scss"],
+"names": [],
+"file": "main.css"
+}

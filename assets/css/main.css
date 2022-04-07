@@ -1,0 +1,260 @@
+/*colors*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+html {
+  font-size: 62.5%; }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+body {
+  font-family: 'Roboto' , sans-serif;
+  background-image: radial-gradient(circle farthest-corner at 12.3% 19.3%, #5558da 0%, #5fd1f9 100.2%); }
+
+.container {
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row; }
+
+/* search box */
+.search {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 100%;
+  max-width: 40rem;
+  height: 5rem;
+  transform: translateX(-50%) translateY(-50%); }
+  .search__toggle:checked ~ .search__field {
+    width: calc(100% - 80px);
+    border-width: .2rem; }
+    .search__toggle:checked ~ .search__field .search__input::placeholder {
+      opacity: 1; }
+    .search__toggle:checked ~ .search__field .search__close {
+      left: -2.5rem; }
+    .search__toggle:checked ~ .search__field .search__button {
+      right: .5rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 5rem; }
+      .search__toggle:checked ~ .search__field .search__button--toggle {
+        display: none; }
+      .search__toggle:checked ~ .search__field .search__button--submit {
+        display: flex; }
+  .search__close {
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translateX(-50%);
+    transition: .3s; }
+    .search__close::before, .search__close::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 1.5rem;
+      height: .3rem;
+      background-color: #fff; }
+    .search__close::before {
+      transform: rotate(45deg); }
+    .search__close::after {
+      transform: rotate(-45deg); }
+  .search__field {
+    position: absolute;
+    right: 0;
+    left: 50%;
+    width: 4rem;
+    height: 4.5rem;
+    border: 0px solid #fff;
+    border-radius: 5rem;
+    transform: translateX(-50%);
+    transform-origin: right;
+    transition: .3s; }
+  .search__input {
+    position: absolute;
+    left: 0;
+    box-sizing: border-box;
+    width: calc(100% - 4rem);
+    height: 100%;
+    padding: .5rem 1.5rem;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem; }
+    .search__input::placeholder {
+      color: #fff;
+      opacity: 0;
+      transition: .3s;
+      transition-delay: .3s; }
+  .search__label {
+    cursor: pointer; }
+  .search__button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: .3s; }
+    .search__button--submit {
+      display: none;
+      border: 0; }
+  .search__icon {
+    position: relative;
+    width: 1.9rem;
+    height: 1.9rem; }
+    .search__icon::before {
+      display: block;
+      content: '';
+      width: 1.3rem;
+      height: 1.3rem;
+      background-color: transparent;
+      border: 0.2rem solid #0173FF;
+      border-radius: 5rem; }
+    .search__icon::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+      content: '';
+      width: 1.1rem;
+      height: .2rem;
+      background-color: #0173FF;
+      transform: rotate(45deg);
+      transform-origin: right; }
+
+.card_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .card_wrapper .card {
+    background-color: #fff;
+    width: 78rem;
+    height: 26rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
+    text-transform: capitalize;
+    letter-spacing: .03rem; }
+    .card_wrapper .card .card__left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 14rem;
+      -webkit-filter: sepia(100%);
+      filter: sepia(100%);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+      height: 14rem;
+      margin: 0 5rem;
+      border-radius: 50%;
+      border: 0.1rem solid #9299A3;
+      background: url(./../user-profile-svgrepo-com.svg) no-repeat, linear-gradient(to top, #5ee7df 0%, #b490ca 100%); }
+      .card_wrapper .card .card__left:hover {
+        -webkit-filter: sepia(0);
+        filter: sepia(0);
+        border: 0.1rem solid #0173FF; }
+@keyframes rotate {
+  0% {
+    transform: rotateY(40deg);
+    text-shadow: 0 0 0 #0173FF; }
+  100% {
+    transform: rotateY(0deg);
+    text-shadow: 0.1em 0.1em 0.05em #0173FF; } }
+    .card_wrapper .card .card__center {
+      display: flex;
+      width: 70%;
+      height: 40%;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start; }
+      .card_wrapper .card .card__center h1 {
+        color: #323232;
+        font-size: 3.6rem;
+        font-weight: 700;
+        font-family: "Fredoka One", cursive;
+        transition: all 0.5s;
+        animation: rotate 5s ease-in infinite;
+        animation-direction: alternate;
+        letter-spacing: 0.5vw;
+        -webkit-text-stroke: 1.5px #0173FF; }
+      .card_wrapper .card .card__center h2 a {
+        color: #9299A3;
+        font-size: 1.4rem;
+        font-weight: 700;
+        position: relative; }
+        .card_wrapper .card .card__center h2 a::before {
+          position: absolute;
+          content: '';
+          left: 1.2rem;
+          bottom: -.2rem;
+          width: 80%;
+          height: .2rem;
+          background: #0173FF;
+          transform: scaleX(0);
+          transition: transform .5s ease; }
+        .card_wrapper .card .card__center h2 a:hover::before {
+          transform: scaleX(1); }
+      .card_wrapper .card .card__center .extra__info {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: start;
+        color: #5c5c5c;
+        font-weight: 400;
+        text-transform: capitalize;
+        font-size: 1.6rem; }
+        .card_wrapper .card .card__center .extra__info div:not(:first-child) {
+          padding-left: 2rem; }
+        .card_wrapper .card .card__center .extra__info span {
+          padding: 0 .5rem;
+          color: #323232;
+          font-weight: 700; }
+    .card_wrapper .card .card__right {
+      padding-right: 3rem;
+      display: flex;
+      flex-direction: row; }
+      .card_wrapper .card .card__right span {
+        padding: 1rem;
+        margin: 0 .5rem;
+        background-size: cover;
+        position: relative; }
+        .card_wrapper .card .card__right span:first-child::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 90%;
+          height: 90%;
+          top: 0;
+          background: url(./../more-svgrepo-com.svg) no-repeat center center; }
+        .card_wrapper .card .card__right span:last-child {
+          background: url(./../edit-svgrepo-com.svg) no-repeat center center; }
+        .card_wrapper .card .card__right span:hover {
+          cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */
