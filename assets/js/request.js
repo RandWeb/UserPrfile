@@ -14,7 +14,7 @@ let searchIcon = document.querySelector('.search__button--submit');
 const GetInfoUser = () => {
     if (!search.value) {
         HideCard();
-        ShowToast("input is not empty");
+        ShowToast("Input can not be empty");
         return;
     }
     else {
