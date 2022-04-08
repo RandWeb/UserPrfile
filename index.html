@@ -6,31 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
 
     <div class="container">
-        <div class="search__wrapper">
-            <form class="search">
-                <input type="checkbox" id="toggleSearch" class="search__toggle" hidden />
-                <div class="search__field">
-                    <label for="toggleSearch" class="search__label">
-                        <span class="search__close"></span>
-                    </label>
-                    <input type="text" class="search__input" placeholder="Searching User In Github" />
-                    <label for="toggleSearch" class="search__label">
-                        <div class="search__button">
-                            <div class="search__icon search__button--toggle"></div>
-                        </div>
-                        <button type="submit" class="search__button search__button--submit">
-                            <div class="search__icon"></div>
-                        </button>
-                    </label>
-                </div>
-            </form>
-        </div>
+        <form class="search">
+            <input type="checkbox" id="toggleSearch" class="search__toggle" hidden />
+            <div class="search__field">
+                <label for="toggleSearch" class="search__label">
+                    <span class="search__close"></span>
+                </label>
+                <input type="text" class="search__input" placeholder="Searching User In Github" />
+                <label for="toggleSearch" class="search__label">
+                    <div class="search__button">
+                        <div class="search__icon search__button--toggle"></div>
+                    </div>
+                    <button type="button" onclick="GetInfoUser()" class="search__button search__button--submit">
+                        <div class="search__icon"></div>
+                    </button>
+                </label>
+            </div>
+        </form>
 
         <div class="card_wrapper">
             <div class="card">
@@ -40,39 +41,28 @@
                     <h1>git hub</h1>
                     <h2><a href="https:github.com">@github</a></h2>
                     <div class="extra__info">
-                        <div class="repositories"><span>2222</span>repositories</div>
-                        <div class="follower"><span>2222</span>followers</div>
-                        <div class="following"><span>2222</span>following</div>
+                        <div class="extra__info--repositories"><span>2222</span>
+                            <p>repositories</p>
+                        </div>
+                        <div class="extra__info--follower"><span>2222</span>
+                            <p>followers</p>
+                        </div>
+                        <div class="extra__info--following"><span>2222</span>
+                            <p>following</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card__right">
-                    <span class="card__more"></span>
-                    <span class="card__edit"></span>
+                    <span class="card__right--more"></span>
+                    <span class="card__right--edit"></span>
                 </div>
             </div>
         </div>
+        <div class="toast">
+            <p class="toast__message">A notification message..</p>
+        </div>
     </div>
-
-    <script>
-        // close onclick outside
-        document.addEventListener('click', (e) => {
-            const toggle = document.querySelector('.search__toggle')
-            const input = document.querySelector('.search__input')
-            const clickedElement = e.target
-
-            if (clickedElement == toggle) {
-                input.value = ''
-                return;
-            }
-
-            const isSearchField = clickedElement.closest('.search__field')
-            console.log(input.value);
-            if (!isSearchField) {
-                toggle.checked = false
-                input.value = ''
-            }
-        })
-    </script>
+    <script src="assets/js/request.js"></script>
 </body>
 
 </html>

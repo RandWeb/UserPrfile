@@ -1,0 +1,85 @@
+.toast {
+    width: auto;
+    visibility: hidden;
+    background-color: $colorOnPrimary;
+    position: fixed;
+    bottom: 4rem;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    .toast__message {
+        color: $colorPrimary;
+        padding: 1.6rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+}
+
+.show {
+    left: 42%;
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 3rem;
+        opacity: 1;
+    }
+}
+@keyframes expand {
+    from {
+        min-width: 5rem;
+    }
+
+    to {
+        min-width: 35rem;
+    }
+}
+
+
+@keyframes stay {
+    from {
+        min-width: 35rem;
+    }
+
+    to {
+        min-width: 35rem;
+    }
+}
+
+
+
+@keyframes shrink {
+    from {
+        min-width: 35rem;
+    }
+
+    to {
+        min-width: 5rem;
+    }
+}
+
+
+@keyframes fadeout {
+    from {
+        bottom: 3rem;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 6rem;
+        opacity: 0;
+    }
+}
