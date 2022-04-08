@@ -144,6 +144,15 @@ body {
       transform: rotate(45deg);
       transform-origin: right; }
 
+@keyframes rotateChecked {
+  0% {
+    transform: rotate(0%); }
+  10% {
+    transform: rotate(5%); }
+  30% {
+    transform: rotate(-5%); }
+  100% {
+    transform: rotate(70%); } }
 .card_wrapper {
   width: 100%;
   display: flex;
@@ -177,11 +186,23 @@ body {
       margin: 0 5rem;
       border-radius: 50%;
       border: 0.1rem solid #9299A3;
-      background: url(./../user-profile-svgrepo-com.svg) no-repeat, linear-gradient(to top, #5ee7df 0%, #b490ca 100%); }
+      background: url(./../user-profile-svgrepo-com.svg) no-repeat, linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+      position: relative; }
       .card_wrapper .card .card__left:hover {
         -webkit-filter: sepia(0);
         filter: sepia(0);
         border: 0.1rem solid #0173FF; }
+      .card_wrapper .card .card__left:hover::after {
+        animation: rotateChecked 1s infinite; }
+      .card_wrapper .card .card__left::after {
+        content: "";
+        position: absolute;
+        bottom: .8rem;
+        right: .8rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 50%;
+        background: #0173FF url(./../checked-tick-svgrepo-com.svg) no-repeat center center; }
 @keyframes rotate {
   0% {
     transform: rotateY(40deg);

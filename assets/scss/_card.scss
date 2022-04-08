@@ -1,3 +1,21 @@
+
+
+
+@keyframes rotateChecked{
+0%{
+    transform: rotate(0%);
+}
+10%{
+    transform: rotate(5%);
+}
+30%{
+    transform: rotate(-5%);
+}
+100%{
+    transform: rotate(70%);
+}
+}
+
 .card_wrapper {
     width: 100%;
     display: flex;
@@ -33,11 +51,26 @@
             border-radius: 50%;
             border: .1rem solid $colorTextOnPrimary;
             background: url(./../user-profile-svgrepo-com.svg) no-repeat, linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
-
+            position: relative;
             &:hover {
                 -webkit-filter: sepia(0);
                 filter: sepia(0);
                 border: .1rem solid $colorOnPrimary;
+            }
+            &:hover::after {
+                animation: rotateChecked 1s infinite;
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: .8rem;
+                right: .8rem;
+                width: 1.8rem;
+                height: 1.8rem;
+                border-radius: 50%;
+                background: $colorOnPrimary url(./../checked-tick-svgrepo-com.svg) no-repeat center center ;
+
             }
         }
 
