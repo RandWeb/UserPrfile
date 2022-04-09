@@ -52,6 +52,7 @@ function SetUser({ name, avatar_url, public_repos, followers, following, login }
     avatar.style.background = `url(${avatar_url}) no-repeat center center`;
     avatar.style.backgroundSize = "cover";
     userName.innerHTML = `@${login}`;
+    userName.href = `https:/github.com/${login}`;
 }
 
 function ShowToast(messaage) {
