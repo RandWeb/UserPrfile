@@ -51,8 +51,7 @@ function SetUser({ name, avatar_url, public_repos, followers, following, login }
     console.log(avatar);
     avatar.style.background = `url(${avatar_url}) no-repeat center center`;
     avatar.style.backgroundSize = "cover";
-    userName.textContent = `@${login}`;
-    userName.href += `${login}`;
+    userName.innerHTML = `@${login}`;
 }
 
 function ShowToast(messaage) {
